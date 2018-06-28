@@ -1,14 +1,12 @@
 📦 setup.py (for humans)
 =======================
 
-本项目提供一个 `setup.py` 的最佳实践，来自 Python 大神 @kennethreitz。
+`setup.py` 文件在刚开始的时候总让人望而生畏，本项目提供了一个 `setup.py` 的最佳实践，让你可以通过复制粘贴快速创建自己的 `setup.py`。
 
-例如，这个 `setup.py` 提供了一个 `$ python setup.py upload` 命令来创建  *universal wheel* (和 *sdist*) ，然后使用 [Twine] 把包上传到 [Pypi],这样就不再需要烦人的 `setup.cfg` 文件。它还会自动创建/上传一个新的 git tag。
+最佳实践：
 
-简而言之，`setup.py` 文件在刚开始的时候总让人望而生畏，本项目可以让你方便的复制粘贴，大大的节省时间，减少出错。
-
-[Check out the example!][an example setup.py]
-
+-  `$ python setup.py upload` 命令来创建  *universal wheel* (和 *sdist*) ，然后使用 [Twine] 把包上传到 [Pypi]，这样就不再需要烦人的 `setup.cfg` 文件。它还会自动创建/上传一个新的 git tag。
+- 待补充...
 
 To Do
 -----
