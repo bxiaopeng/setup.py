@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Note: To use the 'upload' functionality of this file, you must:
+# 注意: 要使用此文件的“上传”功能，您必须:
 #   $ pip install twine
 
 import io
@@ -11,7 +11,7 @@ from shutil import rmtree
 
 from setuptools import find_packages, setup, Command
 
-# Package meta-data.
+# 打包元数据
 NAME = 'mypackage'
 DESCRIPTION = 'My short description for my project.'
 URL = 'https://github.com/me/myproject'
@@ -20,24 +20,24 @@ AUTHOR = 'Awesome Soul'
 REQUIRES_PYTHON = '>=3.6.0'
 VERSION = None
 
-# What packages are required for this module to be executed?
+# 该模块依赖了哪些软件包
 REQUIRED = [
     # 'requests', 'maya', 'records',
 ]
 
-# The rest you shouldn't have to touch too much :)
+# 其他的你就不需要改太多了:)
 # ------------------------------------------------
-# Except, perhaps the License and Trove Classifiers!
-# If you do change the License, remember to change the Trove Classifier for that!
+# 除了 License 和 Trove Classifiers!
+# 如果你要更改 License, 请记得也要改 Trove Classifier!
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-# Import the README and use it as the long-description.
-# Note: this will only work if 'README.md' is present in your MANIFEST.in file!
+# 导入 README 并将其用作长描述。
+# 注意：这只有在你的 MANIFEST.in 文件中存在'README.md'时才会起作用！
 with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = '\n' + f.read()
 
-# Load the package's __version__.py module as a dictionary.
+# 加载包中的 __version__.py 模块
 about = {}
 if not VERSION:
     with open(os.path.join(here, NAME, '__version__.py')) as f:
@@ -89,13 +89,13 @@ setup(
     version=about['__version__'],
     description=DESCRIPTION,
     long_description=long_description,
-    long_description_content_type='text/markdown'
+    long_description_content_type='text/markdown',
     author=AUTHOR,
     author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
     url=URL,
     packages=find_packages(exclude=('tests',)),
-    # If your package is a single module, use this instead of 'packages':
+    # 如果你的 package 是单个模块，请使用此代替“packages”：
     # py_modules=['mypackage'],
 
     # entry_points={
