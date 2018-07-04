@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# 注意: 要使用此文件的“上传”功能，您必须:
+# 注意: 要使用此文件的“上传”功能，必须要安装 twine:
 #   $ pip install twine
 
 import io
@@ -20,10 +20,16 @@ AUTHOR = 'Awesome Soul'
 REQUIRES_PYTHON = '>=3.6.0'
 VERSION = None
 
-# 该模块依赖了哪些软件包
+# 该模块依赖了哪些包？
 REQUIRED = [
     # 'requests', 'maya', 'records',
 ]
+
+# 哪些包是可选的？
+EXTRAS = {
+    # 'fancy feature': ['django'],
+}
+
 
 # 其他的你就不需要改太多了:)
 # ------------------------------------------------
@@ -33,9 +39,12 @@ REQUIRED = [
 here = os.path.abspath(os.path.dirname(__file__))
 
 # 导入 README 并将其用作长描述。
-# 注意：这只有在你的 MANIFEST.in 文件中存在'README.md'时才会起作用！
-with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
-    long_description = '\n' + f.read()
+# 注意：只有你的 MANIFEST.in 文件中存在'README.md'时才会起作用！
+try:
+    with io.open(os.path.join(here, 'README.md'), encoding='utf-8') as f:
+        long_description = '\n' + f.read()
+except FileNotFoundError:
+        long_description = DESCRIPTION
 
 # 加载包中的 __version__.py 模块
 about = {}
@@ -47,14 +56,14 @@ else:
 
 
 class UploadCommand(Command):
-    """Support setup.py upload."""
+    """支持 setup.py 上专"""
 
     description = 'Build and publish the package.'
     user_options = []
 
     @staticmethod
     def status(s):
-        """Prints things in bold."""
+        """用粗体打印"""
         print('\033[1m{0}\033[0m'.format(s))
 
     def initialize_options(self):
@@ -73,7 +82,7 @@ class UploadCommand(Command):
         self.status('Building Source and Wheel (universal) distribution…')
         os.system('{0} setup.py sdist bdist_wheel --universal'.format(sys.executable))
 
-        self.status('Uploading the package to PyPi via Twine…')
+        self.status('Uploading the package to PyPI via Twine…')
         os.system('twine upload dist/*')
 
         self.status('Pushing git tags…')
@@ -83,7 +92,7 @@ class UploadCommand(Command):
         sys.exit()
 
 
-# Where the magic happens:
+# 奇迹发生的地方:
 setup(
     name=NAME,
     version=about['__version__'],
@@ -102,6 +111,7 @@ setup(
     #     'console_scripts': ['mycli=mymodule:cli'],
     # },
     install_requires=REQUIRED,
+    extras_require=EXTRAS,
     include_package_data=True,
     license='MIT',
     classifiers=[
