@@ -1,29 +1,27 @@
-📦 setup.py (for humans)
-=======================
+# 📦 setup.py (for humans)
 
-`setup.py` 文件在刚开始的时候总让人望而生畏，本项目提供了一个 `setup.py` 的最佳实践，让你可以通过复制粘贴快速创建自己的 `setup.py`。
+setup.py 是分发 Python 模块的标准，运行它可以打包应用并将其上传到 [Pypi] 或你自己的服务器。
 
-最佳实践：
+但是在新开始一个 Python 项目的时候 `setup.py` 文件总让人望而生畏，因此本项目希望能够提供一些 `setup.py` 的先进模式和最佳实践，通过注释和模板来引导你快速开始一个项目。
 
--  `$ python setup.py upload` 命令来创建  *universal wheel* (和 *sdist*) ，然后使用 [Twine] 把包上传到 [Pypi]，这样就不再需要烦人的 `setup.cfg` 文件。它还会自动创建/上传一个新的 git tag。
-- 待补充...
+一些最佳实践：
 
-To Do
------
+- 使用 `$ python setup.py upload` 命令创建 _universal wheel_ (和 _sdist_) ，然后通过 [Twine] 把包上传到 [Pypi]，这样就不再需要烦人的 `setup.cfg` 文件了。另外，它还会自动创建/上传一个新的 git tag。
 
--   Tests via `$ setup.py test` (if it's concise).
+## 安装本项目
 
-欢迎 Pull requests ！
+```bash
+cd your_project
 
-更多资源
---------------
+# 下载 setup.py 文件
 
--   [What is setup.py?] on Stack Overflow
--   [The Hitchhiker's Guide to Packaging]
--   [Cookiecutter template for a Python package]
+# 使用 curl
+curl -O https://github.com/bxiaopeng/setup.py/master/setup.py
+# 使用 wget
+wget https://github.com/bxiaopeng/setup.py/master/setup.py -O setup.py
+```
 
-License
--------
+## License
 
 This is free and unencumbered software released into the public domain.
 
@@ -32,11 +30,5 @@ distribute this software, either in source code form or as a compiled
 binary, for any purpose, commercial or non-commercial, and by any means.
 
 ✨🍰✨
-
-[an example setup.py]: https://github.com/kennethreitz/setup.py/blob/master/setup.py
-[PyPi]: https://docs.python.org/3/distutils/packageindex.html
-[Twine]: https://pypi.python.org/pypi/twine
-[image]: https://farm1.staticflickr.com/628/33173824932_58add34581_k_d.jpg
-[What is setup.py?]: https://stackoverflow.com/questions/1471994/what-is-setup-py
-[The Hitchhiker's Guide to Packaging]: https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/creation.html
-[Cookiecutter template for a Python package]: https://github.com/audreyr/cookiecutter-pypackage
+[pypi]: https://docs.python.org/3/distutils/packageindex.html
+[twine]: https://pypi.python.org/pypi/twine
