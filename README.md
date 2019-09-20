@@ -1,4 +1,4 @@
-# 📦 setup.py (for humans)
+# 📦 setup.py
 
 setup.py 是分发 Python 模块的标准，运行它可以打包应用并将其上传到 [Pypi] 或你自己的服务器。
 
@@ -30,5 +30,7 @@ distribute this software, either in source code form or as a compiled
 binary, for any purpose, commercial or non-commercial, and by any means.
 
 ✨🍰✨
+
 [pypi]: https://docs.python.org/3/distutils/packageindex.html
+
 [twine]: https://pypi.python.org/pypi/twine
