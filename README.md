@@ -8,19 +8,6 @@ setup.py 是分发 Python 模块的标准，运行它可以打包应用并将其
 
 - 使用 `$ python setup.py upload` 命令创建 _universal wheel_ (和 _sdist_) ，然后通过 [Twine] 把包上传到 [Pypi]，这样就不再需要烦人的 `setup.cfg` 文件了。另外，它还会自动创建/上传一个新的 git tag。
 
-## 安装本项目
-
-```bash
-cd your_project
-
-# 下载 setup.py 文件
-
-# 使用 curl
-curl -O https://github.com/bxiaopeng/setup.py/master/setup.py
-# 使用 wget
-wget https://github.com/bxiaopeng/setup.py/master/setup.py -O setup.py
-```
-
 ## License
 
 This is free and unencumbered software released into the public domain.
